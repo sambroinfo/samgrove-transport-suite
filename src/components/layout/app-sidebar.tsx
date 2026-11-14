@@ -48,8 +48,8 @@ export function AppSidebar() {
                 {group.items.map((item) => {
                   const active = isActive(item.to);
                   return (
+                    <SidebarMenuItem key={item.to}>
                     <SidebarMenuButton
-                      key={item.to}
                       asChild
                       isActive={active}
                       tooltip={t(item.label)}
@@ -63,6 +63,7 @@ export function AppSidebar() {
                         )}
                       </Link>
                     </SidebarMenuButton>
+                    </SidebarMenuItem>
                   );
                 })}
               </SidebarMenu>
