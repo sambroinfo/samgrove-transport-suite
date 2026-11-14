@@ -14,7 +14,6 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
-import { Route as ZzShellPreviewRouteImport } from './routes/zz-shell-preview'
 import { Route as AuthenticatedChatRouteImport } from './routes/_authenticated/chat'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedDriversRouteImport } from './routes/_authenticated/drivers'
@@ -50,11 +49,6 @@ const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ZzShellPreviewRoute = ZzShellPreviewRouteImport.update({
-  id: '/zz-shell-preview',
-  path: '/zz-shell-preview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedChatRoute = AuthenticatedChatRouteImport.update({
@@ -126,7 +120,6 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
-  '/zz-shell-preview': typeof ZzShellPreviewRoute
   '/chat': typeof AuthenticatedChatRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/drivers': typeof AuthenticatedDriversRoute
@@ -145,7 +138,6 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
-  '/zz-shell-preview': typeof ZzShellPreviewRoute
   '/chat': typeof AuthenticatedChatRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/drivers': typeof AuthenticatedDriversRoute
@@ -166,7 +158,6 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
-  '/zz-shell-preview': typeof ZzShellPreviewRoute
   '/_authenticated/chat': typeof AuthenticatedChatRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/drivers': typeof AuthenticatedDriversRoute
@@ -187,7 +178,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/forgot-password'
     | '/reset-password'
-    | '/zz-shell-preview'
     | '/chat'
     | '/dashboard'
     | '/drivers'
@@ -206,7 +196,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/forgot-password'
     | '/reset-password'
-    | '/zz-shell-preview'
     | '/chat'
     | '/dashboard'
     | '/drivers'
@@ -226,7 +215,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/forgot-password'
     | '/reset-password'
-    | '/zz-shell-preview'
     | '/_authenticated/chat'
     | '/_authenticated/dashboard'
     | '/_authenticated/drivers'
@@ -247,7 +235,6 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
-  ZzShellPreviewRoute: typeof ZzShellPreviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -285,13 +272,6 @@ declare module '@tanstack/react-router' {
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/zz-shell-preview': {
-      id: '/zz-shell-preview'
-      path: '/zz-shell-preview'
-      fullPath: '/zz-shell-preview'
-      preLoaderRoute: typeof ZzShellPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/chat': {
@@ -420,7 +400,6 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
   ResetPasswordRoute: ResetPasswordRoute,
-  ZzShellPreviewRoute: ZzShellPreviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
