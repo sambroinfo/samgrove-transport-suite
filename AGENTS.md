@@ -28,3 +28,13 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Signed-in pages live under `src/routes/_authenticated/` (client-only gate in `route.tsx`); auth screens (`/auth`, `/forgot-password`, `/reset-password`) are public top-level routes. Why: the session lives in browser storage, so a server-side gate would loop.
+- Data reads go through the browser Supabase client with RLS and `queryOptions` factories in `src/lib/queries.ts`, always scoped by the current organization from `useOrg()`. Why: multi-tenant isolation is enforced by RLS plus explicit `organization_id` filters.
+- Only query tables/columns that exist in `src/integrations/supabase/types.ts`; never read keys out of jsonb snapshot columns without confirming their shape. Why: the schema is owned by the user's existing Supabase project.
+- Embeds across composite foreign keys must name the constraint (e.g. `vehicles!trips_vehicle_id_organization_id_fkey`). Why: tables carry both org and entity FKs, so unhinted embeds are ambiguous.
+- Unbuilt modules render `ModulePlaceholder` with no sample data; dashboards show "—" or empty states instead of invented figures. Why: the user forbids placeholder data presented as live.
+- UI strings go through `useI18n().t()` with keys in `src/lib/i18n.tsx` (every language must define every key). Why: the header language selector switches the whole app.
+- Navigation items are defined once in `src/lib/navigation.ts`; each `to` needs a matching route file.

@@ -73,7 +73,7 @@ export function TodaysTrips({ orgId }: { orgId: string }) {
                 <p className="truncate text-sm font-semibold">{trip.vehicles?.vehicle_code ?? "—"}</p>
                 <p className="truncate text-xs capitalize text-muted-foreground">{label(trip.direction)}</p>
               </div>
-              <StatusPill tone={TRIP_TONE[trip.status]}>{label(trip.status)}</StatusPill>
+              <StatusPill tone={TRIP_TONE[trip.status]} className="capitalize">{label(trip.status)}</StatusPill>
             </li>
           ))}
         </ul>
@@ -99,7 +99,7 @@ export function OpenIncidents({ orgId }: { orgId: string }) {
                   {label(inc.status)} · {formatDistanceToNow(new Date(inc.created_at), { addSuffix: true })}
                 </p>
               </div>
-              <StatusPill tone={SEVERITY_TONE[inc.severity]}>{inc.severity}</StatusPill>
+              <StatusPill tone={SEVERITY_TONE[inc.severity]} className="capitalize">{inc.severity}</StatusPill>
             </li>
           ))}
         </ul>

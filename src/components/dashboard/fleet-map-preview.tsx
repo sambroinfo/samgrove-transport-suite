@@ -59,7 +59,7 @@ export function FleetMapPreview({ orgId }: { orgId: string }) {
           <>
             <div className="mt-3 flex flex-wrap gap-2">
               {counts.map((c) => (
-                <StatusPill key={c.key} tone={c.tone}>
+                <StatusPill key={c.key} tone={c.tone} className="capitalize">
                   {c.key} · {c.count}
                 </StatusPill>
               ))}
