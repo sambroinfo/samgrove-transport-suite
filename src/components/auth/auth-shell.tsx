@@ -18,7 +18,7 @@ export function AuthShell({
   return (
     <div className="min-h-svh bg-background lg:grid lg:grid-cols-[1.05fr_1fr]">
       {/* Brand panel: a short band on phones, a full-height column on desktop. */}
-      <aside className="relative h-56 overflow-hidden surface-ink sm:h-64 lg:sticky lg:top-0 lg:h-svh">
+      <aside className="relative h-60 overflow-hidden surface-ink sm:h-72 lg:sticky lg:top-0 lg:h-svh">
         <img
           src={heroImage}
           alt="SAMGROVE shuttle on a city expressway at dusk"
@@ -27,7 +27,7 @@ export function AuthShell({
           className="absolute inset-0 size-full object-cover object-[50%_70%] opacity-90"
         />
         <div className="absolute inset-0 bg-veil" />
-        <div className="relative flex h-full flex-col justify-between p-5 sm:p-8 lg:p-12">
+        <div className="relative flex h-full flex-col justify-between p-5 pb-10 sm:p-8 sm:pb-12 lg:p-12">
           <Logo tone="inverse" />
           <div className="max-w-md animate-rise">
             <p className="eyebrow text-signal">v{BRAND.version}</p>
