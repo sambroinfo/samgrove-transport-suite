@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_authenticated/emergencies")({
   head: () => ({
     meta: [
       { title: `Emergencies · ${BRAND.fullName}` },
-      { name: "description", content: "Incident reporting and response in {BRAND.fullName}." },
+      { name: "description", content: `Incident reporting and response in ${BRAND.fullName}.` },
       { property: "og:title", content: `Emergencies · ${BRAND.fullName}` },
       { property: "og:description", content: "Incident reporting and response." },
       { property: "og:type", content: "website" },

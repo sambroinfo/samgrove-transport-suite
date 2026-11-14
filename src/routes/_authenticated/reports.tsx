@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_authenticated/reports")({
   head: () => ({
     meta: [
       { title: `Reports · ${BRAND.fullName}` },
-      { name: "description", content: "Punctuality, attendance and utilisation reports in {BRAND.fullName}." },
+      { name: "description", content: `Punctuality, attendance and utilisation reports in ${BRAND.fullName}.` },
       { property: "og:title", content: `Reports · ${BRAND.fullName}` },
       { property: "og:description", content: "Punctuality, attendance and utilisation reports." },
       { property: "og:type", content: "website" },

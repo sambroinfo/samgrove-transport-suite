@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_authenticated/chat")({
   head: () => ({
     meta: [
       { title: `Chat · ${BRAND.fullName}` },
-      { name: "description", content: "Vehicle and trip group chats in {BRAND.fullName}." },
+      { name: "description", content: `Vehicle and trip group chats in ${BRAND.fullName}.` },
       { property: "og:title", content: `Chat · ${BRAND.fullName}` },
       { property: "og:description", content: "Vehicle and trip group chats." },
       { property: "og:type", content: "website" },

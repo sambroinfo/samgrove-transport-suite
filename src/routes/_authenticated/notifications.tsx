@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_authenticated/notifications")({
   head: () => ({
     meta: [
       { title: `Notifications · ${BRAND.fullName}` },
-      { name: "description", content: "Your notification inbox and preferences in {BRAND.fullName}." },
+      { name: "description", content: `Your notification inbox and preferences in ${BRAND.fullName}.` },
       { property: "og:title", content: `Notifications · ${BRAND.fullName}` },
       { property: "og:description", content: "Your notification inbox and preferences." },
       { property: "og:type", content: "website" },

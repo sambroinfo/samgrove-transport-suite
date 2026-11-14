@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_authenticated/gps-tracking")({
   head: () => ({
     meta: [
       { title: `GPS Tracking · ${BRAND.fullName}` },
-      { name: "description", content: "Live vehicle positions and geofences in {BRAND.fullName}." },
+      { name: "description", content: `Live vehicle positions and geofences in ${BRAND.fullName}.` },
       { property: "og:title", content: `GPS Tracking · ${BRAND.fullName}` },
       { property: "og:description", content: "Live vehicle positions and geofences." },
       { property: "og:type", content: "website" },
