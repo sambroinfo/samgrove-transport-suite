@@ -1,5 +1,5 @@
 import {
-  AlertTriangle,
+  Siren,
   BarChart3,
   Bell,
   Bus,
@@ -8,7 +8,7 @@ import {
   MessagesSquare,
   Route as RouteIcon,
   Settings,
-  SteeringWheel,
+  IdCard,
   CalendarClock,
   Users,
   type LucideIcon,
@@ -44,7 +44,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { to: "/routes", label: "nav.routes", icon: RouteIcon },
       { to: "/gps-tracking", label: "nav.gps", icon: MapPinned },
       { to: "/vehicles", label: "nav.vehicles", icon: Bus },
-      { to: "/drivers", label: "nav.drivers", icon: SteeringWheel },
+      { to: "/drivers", label: "nav.drivers", icon: IdCard },
     ],
   },
   {
@@ -56,7 +56,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { to: "/notifications", label: "nav.notifications", icon: Bell },
       { to: "/chat", label: "nav.chat", icon: MessagesSquare },
-      { to: "/emergencies", label: "nav.emergencies", icon: AlertTriangle },
+      { to: "/emergencies", label: "nav.emergencies", icon: Siren },
     ],
   },
   {
