@@ -28,3 +28,4 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d13a0300-896f-4384-8ae9-472129df4f3a/deploy-status)](https://app.netlify.com/projects/samgrove-office-trasport-suit/deploys)
